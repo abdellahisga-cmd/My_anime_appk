@@ -1,0 +1,15 @@
+name: anime_stream
+description: A simple anime streaming app
+publish_to: 'none'
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dio: ^5.0.0
+  better_player: ^0.0.85
+  provider: ^6.0.5
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  cached_network_image: ^3.2.3

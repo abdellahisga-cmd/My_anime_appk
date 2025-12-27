@@ -1,0 +1,18 @@
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y \
+  ffmpeg \
+  nodejs \
+  npm \
+  curl \
+  git \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# copy backend app (mounted by docker-compose)
+COPY ./ /app
+
+RUN npm install --prefix /app
+
+CMD ["node", "/app/workers/transcodeWorker.js"]
